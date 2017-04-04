@@ -1,6 +1,6 @@
-var formation = ["Raphael", "Océane", "Jordy","Mouad","Romain","Marco","Florian","Emilie","Franck","Elodie","Grégory","Morel","Maxime","Julien"]; // la formation comtient 5 groupes
+var formation = ["Raphael", "Océane", "Jordy","Mouad","Romain","Marco","Florian","Emilie","Franck","Elodie","Grégory","Morel","Maxime","Julien","Dimitri"]; // la formation comtient 5 groupes
 var table =["table 1", "table 2", "table 3", "table 4", "table 5"];
-//var disposition =[formation [i]+ " " + table[i]];	
+
 if (formation !=""){
 
 	function shuffle(array) {
@@ -13,35 +13,26 @@ if (formation !=""){
 	    return array;
 	};
 
-	$(document).ready(function(){
-
-	var currentPosition = formation.length, temporaryPosition, randomPosition;
-
-	for (i=formation.length; i<=0; i--){
-
-			randomPosition = Math.round(currentPosition*Math.random());
-			currentPosition -= 1
-
-			temporaryPosition = formation[currentPosition];
-			formation[currentPosition] = formation[randomPosition];
-			formation[randomPosition] = temporaryPosition;
-		}
 	formation = shuffle(formation);
-		console.log (formation);
-
-	});
-
-}
 
 var notable = -1
 
-for (i=0; i<=formation.length; i++){
+for (j=0; j<=formation.length; j++){
 
 	if (notable>=table.length-1 ){
 		notable = 0
 	} else
 
 	{notable ++}
+	
+	
+	$("tbody").append("<tr><th>"+formation[j]+"</th><th>"+table[notable]+"</th></td>") 
+	};
 
-console.log (formation[i] +" "+ table[notable]);
-	}
+	};
+;
+
+			 
+		 
+
+	
